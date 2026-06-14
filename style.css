@@ -1,0 +1,581 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #0f0f1a;
+  --card: #13131f;
+  --border: #1e1e30;
+  --accent: #00d4ff;
+  --accent2: #7b2fff;
+  --text: #e0e0e0;
+  --muted: #888;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: rgba(10,10,15,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 60px 60px;
+  gap: 40px;
+}
+
+.hero-tag {
+  color: var(--accent);
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.hero-content h1 span { color: var(--accent); }
+
+.typing-text {
+  font-size: 1.5rem;
+  color: var(--accent2);
+  font-family: 'Fira Code', monospace;
+  margin: 10px 0 20px;
+}
+
+.hero-desc {
+  color: var(--muted);
+  max-width: 520px;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* TERMINAL */
+.hero-visual { flex-shrink: 0; }
+
+.terminal {
+  background: #0d0d14;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 380px;
+  box-shadow: 0 0 40px rgba(0,212,255,0.08);
+}
+
+.terminal-header {
+  display: flex;
+  gap: 8px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+}
+
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  line-height: 2;
+}
+
+.prompt { color: var(--accent); margin-right: 8px; }
+.output { color: #27c93f; padding-left: 16px; }
+
+.cursor {
+  animation: blink 1s infinite;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* SECTIONS */
+.section {
+  padding: 90px 60px;
+}
+
+.dark-section { background: var(--bg2); }
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-title span { color: var(--accent); }
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.about-text strong { color: var(--accent); }
+
+.about-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.about-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.about-info i { color: var(--accent); width: 16px; }
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.stat-card:hover { border-color: var(--accent); }
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-card p {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* SKILLS */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 16px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.skill-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,212,255,0.1);
+}
+
+.skill-card i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2));
+}
+
+.timeline-item {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.timeline-dot {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--bg);
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(0,212,255,0.4);
+}
+
+.timeline-content {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1;
+  transition: border-color 0.3s;
+}
+
+.timeline-content:hover { border-color: var(--accent); }
+
+.timeline-date {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.timeline-content h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.timeline-content h4 {
+  color: var(--accent2);
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.timeline-content ul {
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.timeline-content ul li { margin-bottom: 6px; }
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px;
+  transition: all 0.3s;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,212,255,0.08);
+}
+
+.project-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.project-card h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tags span {
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.2);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-family: 'Fira Code', monospace;
+}
+
+/* EDUCATION */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.edu-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.edu-card:hover { border-color: var(--accent); }
+
+.edu-icon {
+  font-size: 2.2rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.edu-card h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.edu-card h4 {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.edu-card span {
+  font-family: 'Fira Code', monospace;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+/* CERTIFICATIONS */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.cert-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-3px);
+}
+
+.cert-card i {
+  font-size: 2rem;
+  color: var(--accent2);
+  margin-bottom: 12px;
+}
+
+.cert-card p {
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 32px;
+  transition: border-color 0.3s;
+}
+
+.contact-item:hover { border-color: var(--accent); }
+
+.contact-item i {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+
+.contact-item p {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer span { color: var(--accent); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .navbar { padding: 16px 24px; }
+  .nav-links { gap: 18px; }
+  .hero { flex-direction: column; padding: 100px 24px 60px; text-align: center; }
+  .hero-content h1 { font-size: 2.4rem; }
+  .terminal { width: 100%; max-width: 380px; }
+  .hero-btns { justify-content: center; }
+  .section { padding: 70px 24px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .edu-grid { grid-template-columns: 1fr; }
+}
+
+.linkedin-link {
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.linkedin-link i {
+  color: #0077b5;
+}
+
+.linkedin-link:hover {
+  border-color: #0077b5;
+  transform: translateY(-3px);
+}
+
+.linkedin-link p {
+  color: var(--text);
+}
+
+.phone-item .phone-number {
+  display: none;
+}
+
+.phone-item.revealed .phone-number {
+  display: block;
+}
