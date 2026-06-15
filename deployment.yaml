@@ -17,3 +17,5 @@ spec:
         image: vijay751/portfolio:v1.0
         ports:
         - containerPort: 80   
+
+        
