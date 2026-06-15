@@ -1,0 +1,21 @@
+
+replicaCount: 1
+
+image:
+  repository: vijay751/portfolio
+  pullPolicy: IfNotPresent
+  tag: "v1.0"
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30080
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
