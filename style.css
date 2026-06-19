@@ -579,3 +579,21 @@ body {
 .phone-item.revealed .phone-number {
   display: block;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 34px;
+  height: 34px;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+}
