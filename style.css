@@ -602,3 +602,19 @@ body {
   background: #22c55e;
   color: #000;
 }
+.env-badge {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 999;
+  border-radius: 6px 0 0 6px;
+}
+
+.prod-badge {
+  background: #22c55e;
+  color: #000;
+}
