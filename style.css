@@ -597,3 +597,8 @@ body {
   font-size: 1.1rem;
   font-family: 'Inter', sans-serif;
 }
+
+.prod-badge {
+  background: #22c55e;
+  color: #000;
+}
