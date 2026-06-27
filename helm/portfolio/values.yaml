@@ -4,7 +4,7 @@ replicaCount: 1
 image:
   repository: vijay751/portfolio
   pullPolicy: IfNotPresent
-  tag: "v1.0"
+  tag: "v3.0"
 
 service:
   type: NodePort
